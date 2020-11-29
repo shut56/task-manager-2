@@ -1,0 +1,18 @@
+[
+  {
+    "taskId": "cnlskC5x0bqfJ5Des6Ci5",
+    "title": "Shopping",
+    "_isDeleted": false,
+    "_createdAt": 1606652525986,
+    "_deletedAt": 0,
+    "status": "new"
+  },
+  {
+    "taskId": "1PCxCCHImkRhEGONAFvV3",
+    "title": "Shopping",
+    "_isDeleted": true,
+    "_createdAt": 1606652684401,
+    "_deletedAt": 0,
+    "status": "new"
+  }
+]
