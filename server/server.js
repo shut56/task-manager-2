@@ -104,7 +104,7 @@ server.get('/api/v1/tasks/:category', async (req, res) => {
   const data = await toReadFile(category)
     .then((file) => removeSpecialFields(file))
     .catch(() => {
-      res.status(404)
+      res.send('what???', 404)
       res.end()
     })
   res.json(data)
