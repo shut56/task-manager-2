@@ -30,12 +30,12 @@ try {
 }
 
 const template = {
-  taskId: '', // -  nanoid(),
-  title: '', // имя таска
-  _isDeleted: false, // флаг удален ли таск. Физичически мы таски не удаляем, только помечаем что удален
-  _createdAt: 0, // время в секундах от 1,1,1970 до момента создания таска, // read utc format ( +new Date() )
-  _deletedAt: 0, // время в секундах от 1,1,1970 до момента удаление таска или null, // read utc format ( +new Date() )
-  status: 'new' // ['done', 'new', 'in progress', 'blocked'] - может быть только эти значения и никакие больше
+  taskId: '',
+  title: '',
+  _isDeleted: false,
+  _createdAt: 0,
+  _deletedAt: 0,
+  status: 'new'
 }
 
 const toWriteFile = (fileData, category) => {
@@ -139,10 +139,6 @@ server.get('/api/v1/tasks/:category/:timespan', async (req, res) => {
   res.json(data)
 })
 
-// PATCH /api/v1/tasks/:category/:id - Обновить status с айди id в файле `../tasks/${category}.json` - вернуть обновленный таск.
-// Если статус не соответвует заявленным статусам (['done', 'new', 'in progress', 'blocked']) - не обновлять ничего -
-// вернуть  статус 501 и ответ {"status" :"error", "message": "incorrect status"}
-
 server.patch('/api/v1/tasks/:category/:id', async (req, res) => {
   const { category, id } = req.params
   const { status } = req.body
@@ -190,7 +186,7 @@ server.use('/api/', (req, res) => {
 
 const [htmlStart, htmlEnd] = Html({
   body: 'separator',
-  title: 'Skillcrucial - Become an IT HERO'
+  title: 'Just Task Manager'
 }).split('separator')
 
 server.get('/', (req, res) => {
