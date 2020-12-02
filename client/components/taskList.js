@@ -10,7 +10,7 @@ const TaskList = () => {
   const tasks = useSelector((s) => s.tasks.listOfTasks)
   useEffect(() => {
     dispatch(getTasks(category))
-  }, [])
+  }, [dispatch, category])
   return (
     <div>
       <Head title="TaskList" />

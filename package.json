@@ -166,7 +166,7 @@
     "ignore": [
       "*.hot-update.json",
       "client",
-      "server/tasks/*"
+      "server/tasks/*.*"
     ]
   },
   "husky": {

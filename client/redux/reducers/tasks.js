@@ -4,7 +4,7 @@ const GET_TASKS = 'GET_TASKS'
 const UPDATE_SMTH = 'UPDATE_SMTH'
 
 const initialState = {
-  listOfTasks: ['1232343', '12324']
+  listOfTasks: []
 }
 
 export default (state = initialState, action) => {
@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
 export function getTasks(category) {
   return (dispatch) => {
     console.log('Hello from redux')
-    axios(`https://7cftx.sse.codesandbox.io/api/v1/tasks/${category}`)
+    axios(`/api/v1/tasks/${category}`)
       .then(({ data }) => {
         console.log('Hello from axios')
         dispatch({ type: GET_TASKS, listOfTasks: data })
