@@ -1,6 +1,6 @@
 {
-  "name": "SkillCrucial.com",
-  "short_name": "SC",
+  "name": "ReduxTaskManager",
+  "short_name": "TM",
   "theme_color": "#8bd8bd",
   "background_color": "#243665",
   "display": "browser",
